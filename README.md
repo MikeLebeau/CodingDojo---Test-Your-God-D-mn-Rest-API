@@ -1,4 +1,4 @@
-# CodingDojo-TestAPI
+# CodingDojo - How to test your god d*mn ReST API
 
 Wassup :ghost: ?
 
@@ -12,12 +12,14 @@ Some knowledge about Java/Maven.
 
 In 2000, **Roy Fielding** introduced the **RE**presentational **S**tate **T**ransfer (REST) in his dissertation.
 
+API is for Application Programming Interface
+
 In our case we can relate it to a contract.
 
 ### How to code serenely => Test
 
 To code in good conditions we gotta write tests which allows you to be sure about :
- - Follow the specs
+ - Following the specs
  - Make no regressions
 
 To do that, I'm gonna introduce you Rest Assured.
@@ -34,7 +36,7 @@ For a little reminder :
 ```java
 void awesomeTest(){
 	given()
-	// Here you configure you request, example: set the header, contentType, etc.  
+	// Here you configure your request, example: set the header, contentType, etc.  
 	.when()
 	// Here you give the url, exemple: get("lolilol/loooool")
 	.then()
