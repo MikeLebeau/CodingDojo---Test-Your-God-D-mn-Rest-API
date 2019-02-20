@@ -22,4 +22,29 @@ public class LocalData implements DojoData{
 	public User getUser(int id) {
 		return users.get(id);
 	}
+
+	@Override
+	public User deleteUser(int id) {
+		return users.remove(id);
+	}
+
+	@Override
+	public User createUser(User user) {
+		users.add(user);
+		return user;
+	}
+
+	@Override
+	public User disableUser(int id) {
+		User user = users.get(id);
+		user.setActive(false);
+		return user;
+	}
+
+	@Override
+	public User enableUser(int id) {
+		User user = users.get(id);
+		user.setActive(true);
+		return user;
+	}
 }

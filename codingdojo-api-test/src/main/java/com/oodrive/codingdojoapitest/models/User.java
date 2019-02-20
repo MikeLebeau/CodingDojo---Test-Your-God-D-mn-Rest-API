@@ -5,12 +5,22 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private int age;
+	private boolean active;
 
 	public User(int id, String firstName, String lastName, int age) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
+		this.active = true;
+	}
+
+	public User(int id, String firstName, String lastName, int age, boolean active) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.active = active;
 	}
 
 	public int getId() {
@@ -43,5 +53,13 @@ public class User {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 }
