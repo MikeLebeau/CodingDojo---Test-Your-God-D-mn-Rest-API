@@ -1,49 +1,59 @@
 package com.oodrive.codingdojoapitest.controllers;
 
-import java.util.List;
+import java.util.Collection;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.oodrive.codingdojoapitest.db.DBManager;
+import com.oodrive.codingdojoapitest.db.UserDao;
 import com.oodrive.codingdojoapitest.models.User;
+import com.oodrive.codingdojoapitest.models.UserData;
 
 
 @RestController
 public class UserController {
 
-	@Value("${db.mode}")
-	private String dbMode;
+	private final UserDao userDao;
 
-	private DBManager dbManager = new DBManager();
+	public UserController(UserDao userDao) {
+		this.userDao = userDao;
+	}
 
 	@GetMapping("/users")
-	public List<User> getUsers(){
-		return dbManager.getData(dbMode).getUsers();
+	public Collection<User> getUsers(@RequestParam(defaultValue = "", required = false) String sortBy) {
+		return userDao.getUsers(sortBy);
 	}
 
 	@GetMapping("/users/{userId}")
-	public User getOneUser(@PathVariable int userId){
-		return dbManager.getData(dbMode).getUser(userId);
+	public User getUser(@PathVariable int userId) {
+		return userDao.getUser(userId);
+	}
+
+	@PutMapping("/users")
+	public User createUser(@RequestBody UserData userData) {
+		return userDao.createUser(userData);
 	}
 
 	@DeleteMapping("/users/{userId}")
-	public User deleteOneUser(@PathVariable int userId){
-		return dbManager.getData(dbMode).deleteUser(userId);
+	public void deleteUser(@PathVariable int userId) {
+		userDao.deleteUser(userId);
 	}
 
-	@PutMapping("/users/{userId}/disable")
-	public User disableUser(@PathVariable int userId){
-		return dbManager.getData(dbMode).disableUser(userId);
+	@PatchMapping("/users/{userId}/disable")
+	public User disableUser(@PathVariable int userId) {
+		return userDao.disableUser(userId);
 	}
 
-	@PutMapping("/users/{userId}/enable")
-	public User enableUser(@PathVariable int userId){
-		return dbManager.getData(dbMode).enableUser(userId);
+	@PatchMapping("/users/{userId}/enable")
+	public User enableUser(@PathVariable int userId) {
+		return userDao.enableUser(userId);
 	}
 
 }
