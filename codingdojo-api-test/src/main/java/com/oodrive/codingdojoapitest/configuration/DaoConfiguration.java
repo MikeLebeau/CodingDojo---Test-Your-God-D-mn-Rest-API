@@ -34,11 +34,11 @@ public class DaoConfiguration {
 
 	private static List<User> createMockUsers() {
 		List<User> users = new ArrayList<>();
-		users.add(new User(0, new UserData("Ada", "Lovelace", 36)));
-		users.add(new User(1, new UserData("Rich", "Hickey", 42)));
-		users.add(new User(2, new UserData("Martin ", "Fowler", 56)));
-		users.add(new User(3, new UserData("Alistair ", "Cockburn", 65)));
-		users.add(new User(4, new UserData("James ", "Gosling", 63)));
+		users.add(new User(1, new UserData("Ada", "Lovelace", 36)));
+		users.add(new User(2, new UserData("Rich", "Hickey", 42)));
+		users.add(new User(3, new UserData("Martin ", "Fowler", 56)));
+		users.add(new User(4, new UserData("Alistair ", "Cockburn", 65)));
+		users.add(new User(5, new UserData("James ", "Gosling", 63)));
 		return users;
 	}
 }

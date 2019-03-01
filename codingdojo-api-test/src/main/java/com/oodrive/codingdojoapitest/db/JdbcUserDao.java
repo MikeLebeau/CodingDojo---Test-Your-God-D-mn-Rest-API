@@ -37,27 +37,8 @@ public class JdbcUserDao implements UserDao {
 
 	@Override
 	@Transactional
-	public List<User> getUsers(String sortBy) {
-		String sql = "SELECT * FROM my_user";
-
-		switch(sortBy){
-			case "firstName":
-				sql += " ORDER BY firstName";
-				break;
-			case "lastName":
-				sql += " ORDER BY lastName";
-				break;
-			case "age":
-				sql += " ORDER BY age";
-				break;
-			case "active":
-				sql += " ORDER BY active";
-				break;
-			default:
-				break;
-		}
-
-		return new ArrayList<>(jdbcTemplate.query(sql, userRowMapper));
+	public List<User> getUsers() {
+		return new ArrayList<>(jdbcTemplate.query("SELECT * FROM my_user", userRowMapper));
 	}
 
 	@Override

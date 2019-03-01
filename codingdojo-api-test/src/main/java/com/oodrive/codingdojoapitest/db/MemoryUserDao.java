@@ -29,7 +29,7 @@ public class MemoryUserDao implements UserDao {
 	}
 
 	@Override
-	public Collection<User> getUsers(String sortBy) {
+	public Collection<User> getUsers() {
 		return Collections.unmodifiableCollection(users.values());
 	}
 

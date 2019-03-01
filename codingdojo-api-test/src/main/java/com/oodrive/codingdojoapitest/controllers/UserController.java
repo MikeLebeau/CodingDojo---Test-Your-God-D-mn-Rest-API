@@ -27,8 +27,8 @@ public class UserController {
 	}
 
 	@GetMapping("/users")
-	public Collection<User> getUsers(@RequestParam(defaultValue = "", required = false) String sortBy) {
-		return userDao.getUsers(sortBy);
+	public Collection<User> getUsers() {
+		return userDao.getUsers();
 	}
 
 	@GetMapping("/users/{userId}")

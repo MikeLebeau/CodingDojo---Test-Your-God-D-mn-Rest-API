@@ -8,7 +8,7 @@ import com.oodrive.codingdojoapitest.models.UserData;
 
 public interface UserDao {
 
-	Collection<User> getUsers(String sortBy);
+	Collection<User> getUsers();
 
 	User getUser(int id);
 
