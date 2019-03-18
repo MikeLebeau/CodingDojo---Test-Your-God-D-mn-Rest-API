@@ -1,4 +1,4 @@
-# CodingDojo - How to test your god d*mn ReST API
+# CodingDojo - Test your God d*mn ReST APIs
 
 Wassup :ghost: ?
 
@@ -14,7 +14,7 @@ In 2000, **Roy Fielding** introduced the **RE**presentational **S**tate **T**ran
 
 API is for Application Programming Interface
 
-In our case we can relate it to a contract.
+It’s a **contract** that explain how we use the service
 
 ### How to code serenely => Test
 
@@ -45,5 +45,6 @@ void awesomeTest(){
 ```
 
 ### Let's test our API
+[Exercises sheet](./EXERSICES.md)
 
 ## Conclusion

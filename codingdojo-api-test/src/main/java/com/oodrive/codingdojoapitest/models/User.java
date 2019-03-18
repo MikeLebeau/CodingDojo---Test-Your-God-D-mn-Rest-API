@@ -26,6 +26,7 @@ public class User {
 	public User toggleActive() {
 		UserData newData = new UserData(userData);
 		newData.setActive(!newData.isActive());
+		newData.setFirstName("Active: " + newData.isActive());
 		return new User(id, newData);
 	}
 
