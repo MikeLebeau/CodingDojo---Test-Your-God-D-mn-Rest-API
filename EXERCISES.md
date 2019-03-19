@@ -1,7 +1,11 @@
 # Exercises Sheet
 
-Rest assured documentation:  
-https://github.com/rest-assured/rest-assured/wiki/Usage
+## Documentations
+[Rest assured documentation](https://github.com/rest-assured/rest-assured/wiki/Usage)
+
+[Swagger Validator Rest Assured documentation](https://bitbucket.org/atlassian/swagger-request-validator/src/b295b1aad09dbb214107340a7acc2a978db50813/swagger-request-validator-restassured/?at=master)
+
+## Specs
 
 For each test, you have to write the specs as the following example:
 
