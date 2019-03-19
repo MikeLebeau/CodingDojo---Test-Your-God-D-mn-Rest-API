@@ -61,6 +61,24 @@
 			<version>3.2.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.atlassian.oai</groupId>
+			<artifactId>swagger-request-validator-core</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.atlassian.oai</groupId>
+			<artifactId>swagger-request-validator-restassured</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
 		<!--/////////////////////////////////// Postgres ///////////////////////////////////-->
 		<!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
 		<dependency>

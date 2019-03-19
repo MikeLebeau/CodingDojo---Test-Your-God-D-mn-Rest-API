@@ -45,6 +45,7 @@ void awesomeTest(){
 ```
 
 ### Let's test our API
-[Exercises sheet](./EXERSICES.md)
+[Exercises sheet](EXERCISES.md)
 
-## Conclusion
+### Docker
+[Swagger-editor](https://hub.docker.com/r/swaggerapi/swagger-editor)

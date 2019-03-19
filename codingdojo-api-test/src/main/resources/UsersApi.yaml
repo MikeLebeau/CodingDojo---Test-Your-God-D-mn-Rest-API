@@ -1,0 +1,127 @@
+swagger: "2.0"
+info:
+  description: "This is a simple API as example to my CodingDojo"
+  version: "1.0.0"
+  title: "Coding Dojo Test your God d*mn APIs"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "m.lebeau@oodrive.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8080"
+basePath: "/"
+tags:
+- name: "User"
+  description: "Everything about our users"
+schemes:
+- "http"
+paths:
+  /users:
+    get:
+      tags: 
+        - "User"
+      summary: "Get all users"
+      description: "Get all users"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: '#/definitions/User'
+    put:
+      tags: 
+        - "User"
+      summary: "Create a user"
+      description: "Create a user"
+      parameters: 
+        - name: body
+          in: body
+          description: "The user description"
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        200:
+          description: "Created"
+          schema:
+            $ref: '#/definitions/User'
+  /users/{userId}:
+    get:
+      tags: 
+        - "User"
+      summary: "Get a user"
+      parameters:
+        - in: path
+          name: userId
+          type: integer
+          required: true
+          description: "Numeric ID of the user to get."
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/User'
+    delete:
+      tags: 
+        - "User"
+      summary: "Delete a user"
+      description: "Delete a user"
+      parameters:
+        - in: path
+          name: userId
+          type: integer
+          required: true
+          description: "Numeric ID of the user to get."
+      responses:
+        200:
+          description: "Deleted"
+  /users/{userId}/disable:
+    patch:
+      tags: 
+        - "User"
+      summary: "Disable a user"
+      description: "Disable a user"
+      parameters:
+        - in: path
+          name: userId
+          type: integer
+          required: true
+          description: "Numeric ID of the user to get."
+      responses:
+        200:
+          description: "Disabled"
+          schema:
+            $ref: '#/definitions/User'
+  /users/{userId}/enable:
+    patch:
+      tags: 
+        - "User"
+      summary: "Enable a user"
+      description: "Enable a user"
+      parameters:
+        - in: path
+          name: userId
+          type: integer
+          required: true
+          description: "Numeric ID of the user to get."
+      responses:
+        200:
+          description: "Enabled"
+          schema:
+            $ref: '#/definitions/User'
+    
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+      firstName:
+        type: string
+      lastName:
+        type: string
+      age:
+        type: integer
+      active:
+        type: boolean
