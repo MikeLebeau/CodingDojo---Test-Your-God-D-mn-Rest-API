@@ -1,0 +1,10 @@
+version: "2.0"
+services:
+  db:
+    build: ./postgres/
+    ports:
+      - 5432:5432
+  swagger:
+    image: swaggerapi/swagger-editor
+    ports:
+      - 8083:8080
